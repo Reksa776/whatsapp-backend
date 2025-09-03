@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "install": "npm jimp install mysql2 pino-pretty url socket.io sequelize qrcode-terminal qrcode @whiskeysockets/baileys @hapi/boom bcrypt body-parser cookie-parser cors cron dotenv express fs jsonwebtoken moment multer node-cache node-cron path pino --legacy-peer-deps"
+    "install": "npm install jimp mysql2 pino-pretty url socket.io sequelize qrcode-terminal qrcode @whiskeysockets/baileys @hapi/boom bcrypt body-parser cookie-parser cors cron dotenv express fs jsonwebtoken moment multer node-cache node-cron path pino --legacy-peer-deps"
   },
   "keywords": [],
   "author": "",
