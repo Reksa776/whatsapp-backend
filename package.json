@@ -4,17 +4,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "install": "npm install mysql2 pino-pretty url socket.io sequelize qrcode-terminal qrcode @whiskeysockets/baileys @hapi/boom bcrypt body-parser cookie-parser cors cron dotenv express fs jsonwebtoken moment multer node-cache node-cron path pino --legacy-peer-deps"
+    "install": "npm jimp install mysql2 pino-pretty url socket.io sequelize qrcode-terminal qrcode @whiskeysockets/baileys @hapi/boom bcrypt body-parser cookie-parser cors cron dotenv express fs jsonwebtoken moment multer node-cache node-cron path pino --legacy-peer-deps"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@adiwajshing/baileys": "^3.5.3",
     "@hapi/boom": "^10.0.1",
     "@whiskeysockets/baileys": "^6.7.19",
-    "baileys": "^6.7.16",
     "bcrypt": "^6.0.0",
     "body-parser": "^1.20.3",
     "cookie-parser": "^1.4.7",
