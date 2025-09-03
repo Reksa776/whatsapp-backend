@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 COPY package*.json ./
 
-RUN npm install
+RUN npm install sequelize sequelize-cli mysql2 --save --legacy-peer-deps && npm install mysql2 pino-pretty url socket.io sequelize qrcode-terminal qrcode @whiskeysockets/baileys @hapi/boom bcrypt body-parser cookie-parser cors cron dotenv express fs jsonwebtoken moment multer node-cache node-cron path pino jimp --legacy-peer-deps
 
 # Bundle app source
 COPY . .
