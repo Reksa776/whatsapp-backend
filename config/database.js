@@ -18,6 +18,7 @@ const database = new Sequelize("db_whatsapp", "avnadmin", "AVNS_tM18zkdA_Bx6d3-Y
   host: "mysql-cdc6544-reksa776-c73b.d.aivencloud.com",
   port: 21304,
   dialect: "mysql",
+  dialectModule: mysql2,
   logging: false, // Matikan logging jika tidak perlu
 });
 // const database = new Sequelize("db_whatsapp", "root", "", {
@@ -57,4 +58,5 @@ database.sync().then(() => {
 
   export { models };
   export default database;
+
 
