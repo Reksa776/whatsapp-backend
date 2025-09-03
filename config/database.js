@@ -7,6 +7,7 @@ import JadwalPesan from "../models/JadwalPesan.js";
 import User from "../models/User.js";
 import ListRole from "../models/ListRole.js";
 import fs from 'fs';
+import mysql2 from 'mysql2';
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -56,3 +57,4 @@ database.sync().then(() => {
 
   export { models };
   export default database;
+
