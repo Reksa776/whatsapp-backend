@@ -56,6 +56,7 @@ const io = new Server(server, {
 });
 setIO(io);
 
+
 database.sync()
   .then(() => {
     console.log("Database connected!");
@@ -72,4 +73,9 @@ io.on("connection", (socket) => {
     console.log("❌ Client disconnected:", socket.id);
   });
 });
+export default function handler(req, res) {
+  const parsedUrl = parse(req.url, true);
+  app(req, res);
+}
+
 
