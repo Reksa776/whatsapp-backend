@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "avnadmin",
+    "password": "AVNS_tM18zkdA_Bx6d3-YqVq",
+    "database": "db_whatsapp",
+    "host": "mysql-cdc6544-reksa776-c73b.d.aivencloud.com",
+    "port": 21304,
+    "dialect": "mysql"
+  }
+}
