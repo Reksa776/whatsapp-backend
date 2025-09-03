@@ -13,7 +13,7 @@ let dataQR = null;
 let user = null
 
 const startWhatsApp = async () => {
-  const { state, saveCreds } = await useMultiFileAuthState("sessions");
+  const { state, saveCreds } = await useMultiFileAuthState("/tmp/sessions");
 
   const { version } = await fetchLatestBaileysVersion();
 
@@ -162,3 +162,4 @@ export function setIO(socketIO) {
 export { sock, dataQR, user };
 
 export default startWhatsApp;
+
