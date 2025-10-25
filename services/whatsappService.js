@@ -104,7 +104,7 @@ const startWhatsApp = async () => {
     
       if (reason === DisconnectReason.loggedOut) {
         console.log('❌ Kamu telah logout dari perangkat.');
-        fs.rmSync("/sessions", { recursive: true, force: true });
+        fs.rmSync("/tmp/sessions", { recursive: true, force: true });
     
         // 🔄 Re-run untuk munculkan QR baru setelah logout
         console.log('📱 Silakan scan ulang QR untuk login kembali...');
