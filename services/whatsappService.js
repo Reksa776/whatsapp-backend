@@ -86,18 +86,35 @@ const startWhatsApp = async () => {
       qrcode.generate(qr, { small: true }); // Tampilkan QR ke terminal
     }
 
-    if (connection === 'close') {
-      const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
-      console.log('Connection closed. Reconnecting...', shouldReconnect);
+    // if (connection === 'close') {
+    //   const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
+    //   console.log('Connection closed. Reconnecting...', shouldReconnect);
 
-      if (shouldReconnect) {
-        startWhatsApp();
+    //   if (shouldReconnect) {
+    //     startWhatsApp();
+    //   } else {
+    //     console.log('❌ Kamu telah logout.');
+    //     fs.rmSync("sessions", { recursive: true, force: true });
+    //     startWhatsApp();
+    //   }
+    // }
+    if (connection === 'close') {
+      const reason = new Boom(lastDisconnect?.error)?.output?.statusCode;
+      console.log('Connection closed. Reason:', reason);
+    
+      if (reason === DisconnectReason.loggedOut) {
+        console.log('❌ Kamu telah logout dari perangkat.');
+        fs.rmSync("/sessions", { recursive: true, force: true });
+    
+        // 🔄 Re-run untuk munculkan QR baru setelah logout
+        console.log('📱 Silakan scan ulang QR untuk login kembali...');
+        setTimeout(() => startWhatsApp(), 3000); // delay 3 detik agar tidak looping
       } else {
-        console.log('❌ Kamu telah logout.');
-        fs.rmSync("sessions", { recursive: true, force: true });
+        console.log('🔁 Koneksi terputus, mencoba menyambung kembali...');
         startWhatsApp();
       }
     }
+    
 
     if (connection === 'open' || connection === 'connected') {
       dataQR = null
